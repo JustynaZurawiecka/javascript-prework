@@ -18,9 +18,9 @@ function displayResult(argComputerMove, argPlayerMove){
   
     if((argComputerMove == 'kamień' && argPlayerMove == 'papier') || (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') || (argComputerMove == 'papier' && argPlayerMove == 'nożyce') ){
     printMessage('Ty wygrywasz!');
-    } else if((argComputerMove == 'kamień' && argPlayerMove == 'kamień') || (argComputerMove == 'nożyce' && argPlayerMove == 'nożyce') || (argComputerMove == 'papier' && argPlayerMove == 'papier') ){
+    } else if((argComputerMove == argPlayerMove) ){
     printMessage('Remis');
-	} else if(argPlayerMove != 'kamień' || argPlayerMove != 'nożyce' || argPlayerMove != 'papier') {
+	} else if(argPlayerMove == 'nieznany ruch') {
     printMessage('Niedozwolone!');
 	} else {
     printMessage('Tym razem przegrywasz :(');
