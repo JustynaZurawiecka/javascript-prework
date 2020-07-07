@@ -8,11 +8,9 @@ function playGame(playerInput) {
         } else if(argMoveId == 3) {
             return 'nożyce';
         }
-        return 'nieznany ruch';
     }
     
     let playerMove = getMoveName(playerInput);  
-
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     let computerMove = getMoveName(randomNumber);
     
@@ -23,8 +21,6 @@ function playGame(playerInput) {
         printMessage('Ty wygrywasz!');
         } else if((argComputerMove == argPlayerMove) ){
         printMessage('Remis');
-        } else if(argPlayerMove == 'nieznany ruch') {
-        printMessage('Niedozwolone!');
         } else {
         printMessage('Tym razem przegrywasz :(');
         }
