@@ -1,3 +1,8 @@
+let playerPoints = 0;
+let computerPoints = 0;
+
+let computer 
+
 function playGame(playerInput) {
     clearMessages();
     function getMoveName(argMoveId) {
@@ -18,15 +23,19 @@ function playGame(playerInput) {
         printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
       
         if((argComputerMove == 'kamień' && argPlayerMove == 'papier') || (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') || (argComputerMove == 'papier' && argPlayerMove == 'nożyce') ){
-        printMessage('Ty wygrywasz!');
+        playerPoints = playerPoints + 1;
+        printMessage('Ty wygrywasz! Zdobywasz punkt');
         } else if((argComputerMove == argPlayerMove) ){
-        printMessage('Remis');
+        printMessage('Remis. Nikt nie zdobywa punktu');
         } else {
-        printMessage('Tym razem przegrywasz :(');
+        computerPoints = computerPoints + 1;
+        printMessage('Tym razem przegrywasz. Komputer zdobywa punkt');
         }
+        // console.log(playerPoints + '-' + computerPoints);
+        renderResult(playerPoints,computerPoints);
       }
     
-    return displayResult(computerMove,playerMove);
+    displayResult(computerMove,playerMove);
 }
 
 document.getElementById('play-rock').addEventListener('click', function(){
