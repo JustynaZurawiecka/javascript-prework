@@ -1,8 +1,6 @@
 let playerPoints = 0;
 let computerPoints = 0;
 
-let computer 
-
 function playGame(playerInput) {
     clearMessages();
     function getMoveName(argMoveId) {
